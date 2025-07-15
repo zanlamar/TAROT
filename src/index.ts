@@ -1,5 +1,7 @@
 "use strict"
 
+import { TarotCard } from "./types/tarot.types.js";
+
 document.addEventListener('DOMContentLoaded', function() {
 
     const button = document.querySelector("#getCard") as HTMLButtonElement;
@@ -24,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         tarotCardResponse.textContent = '';
     }
 
-    function showCard(data: object) {
+    function showCard(data: TarotCard ) {
         
         const card = data.cards[0];
 

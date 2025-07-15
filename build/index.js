@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 document.addEventListener('DOMContentLoaded', function () {
     const button = document.querySelector("#getCard");
     const tarotCardResponse = document.getElementById("responseContainer");
