@@ -1,6 +1,6 @@
 "use strict";
 document.addEventListener('DOMContentLoaded', function () {
-    const button = document.getElementById("getCard");
+    const button = document.querySelector("#getCard");
     const tarotCardResponse = document.getElementById("responseContainer");
     button.addEventListener("click", getCard);
     function getCard() {
@@ -8,8 +8,15 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(res => res.json())
             .then(data => {
             console.log(data);
+            clearDiv();
             showCard(data);
+        })
+            .catch(error => {
+            console.error("Error. No card found:", error);
         });
+    }
+    function clearDiv() {
+        tarotCardResponse.textContent = '';
     }
     function showCard(data) {
         const card = data.cards[0];
