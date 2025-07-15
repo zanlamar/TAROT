@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const button = document.getElementById("getCard");
     const tarotCardResponse = document.getElementById("responseContainer");
 
-    button.addEventListener("click", getCard);
+    // button.addEventListener("click", getCard);
 
     function getCard() {
         console.log("Botón clicado, haciendo fetch...");
