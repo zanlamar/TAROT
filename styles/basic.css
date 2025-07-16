@@ -22,7 +22,7 @@ button {
 }
 
 .titleContainer {
-    display: inline-flexbox;
+    display: block;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -30,9 +30,11 @@ button {
 
 }
 
-#responseContainer {
+.responseContainer {
+    padding: 25px;
     display: block;
     text-align: center;
+    margin: 1em;
 }
 
 main {
@@ -45,3 +47,8 @@ main {
     opacity: 80%;
 
 }
+
+.hidden {
+  display: none;
+}
+

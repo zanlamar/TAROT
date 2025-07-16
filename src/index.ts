@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const button = document.querySelector("#getCard") as HTMLButtonElement;
     const tarotCardResponse = document.getElementById("responseContainer") as HTMLDivElement;
+    const tarotIntro = document.getElementById("titleContainer") as HTMLDivElement;
 
     button.addEventListener("click", getCard);
 
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function clearDiv(): void {
         tarotCardResponse.textContent = '';
+        tarotIntro.classList.add("hidden");
     }
 
     function showCard(data: TarotCard ) {
@@ -41,5 +43,11 @@ document.addEventListener('DOMContentLoaded', function() {
         div.appendChild(cardDescription);
 
         tarotCardResponse.appendChild(div);
+
+        tarotCardResponse.classList.add("responseContainer");
+        tarotCardResponse.classList.remove("hidden");
+
+
     }
+    
 });

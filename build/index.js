@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 document.addEventListener('DOMContentLoaded', function () {
     const button = document.querySelector("#getCard");
     const tarotCardResponse = document.getElementById("responseContainer");
+    const tarotIntro = document.getElementById("titleContainer");
     button.addEventListener("click", getCard);
     function getCard() {
         fetch('https://tarotapi.dev/api/v1/cards/random?n=1')
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     function clearDiv() {
         tarotCardResponse.textContent = '';
+        tarotIntro.classList.add("hidden");
     }
     function showCard(data) {
         const card = data.cards[0];
@@ -29,6 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
         div.appendChild(cardTitle);
         div.appendChild(cardDescription);
         tarotCardResponse.appendChild(div);
+        tarotCardResponse.classList.add("responseContainer");
+        tarotCardResponse.classList.remove("hidden");
     }
 });
 //# sourceMappingURL=index.js.map
