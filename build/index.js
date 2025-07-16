@@ -33,6 +33,12 @@ document.addEventListener('DOMContentLoaded', function () {
         tarotCardResponse.appendChild(div);
         tarotCardResponse.classList.add("responseContainer");
         tarotCardResponse.classList.remove("hidden");
+        const buttonAgain = document.createElement('button');
+        buttonAgain.innerText = "Try again... if you dare";
+        buttonAgain.classList.add("button");
+        buttonAgain.classList.add("button");
+        buttonAgain.addEventListener("click", getCard);
+        tarotCardResponse.appendChild(buttonAgain);
     }
 });
 //# sourceMappingURL=index.js.map
