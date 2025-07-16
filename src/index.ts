@@ -10,18 +10,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     button.addEventListener("click", getCard);
 
-    function getCard(): void {
-        fetch('https://tarotapi.dev/api/v1/cards/random?n=1')
-            .then(res => res.json())
-            .then(data => {
+    async function getCard(): Promise <void> {
+        try {
+            const res = await fetch('https://tarotapi.dev/api/v1/cards/random?n=1');
+            const data: TarotCard = await res.json();
                 console.log(data);
                 clearDiv();
                 showCard(data);
-            })
-            .catch(error => {
+        } catch(error) {
                 console.error("Error. No card found:", error);
-            });
-    }
+        };
+
 
     function clearDiv(): void {
         tarotCardResponse.textContent = '';
