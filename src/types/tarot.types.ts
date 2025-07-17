@@ -1,21 +1,26 @@
 // tipos globales
 
-export { TarotCard};
+export interface TarotCardResponse {
+  nhits: number;
+  cards: TarotCard[];
+}
 
-interface TarotCard {
-    nhits: number
-    cards : [{ 
-        desc: string, 
-        meaning_rev: string,
-        meaning_up: string,
-        name: string,    
-        name_short: string,
-        type: string,
-        value: string,
-        value_int: number
-    }],
+export interface TarotCard {
+  desc: string, 
+  meaning_rev: string,
+  meaning_up: string,
+  name: string,    
+  name_short: string,
+  type: string,
+  value: string,
+  value_int: number
 };
 
-// interface APIResponse {
-//     cards: TarotCard[];
-// }
+
+export type UserFeedback = "PAST" | "PRESENT" | "FUTURE";
+
+export interface CardReading {
+    card: TarotCard;
+    vibe?: UserFeedback;
+    timestamp: string;
+};

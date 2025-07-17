@@ -74,11 +74,16 @@ main {
 
 .vibeButtons {
     color: black;
-    background-color: salmon;
+    background-color: rosybrown;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     padding: 10px;
     opacity: 100%;
     margin: 20px 10px;
 }
+
+.vibeButtons:hover {
+    background-color: salmon
+}
+
 
