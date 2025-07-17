@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { addResponse, responses } from "./BBDD/responses.js";
+import { addResponse, responses, addVibe } from "./BBDD/responses.js";
 document.addEventListener('DOMContentLoaded', () => {
     const button = document.querySelector("#getCard");
     const tarotCardResponse = document.getElementById("responseContainer");
@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const card = data.cards[0];
                 console.log(data);
                 clearDiv();
-                showCard(data);
+                showCard(card);
+                addResponse(card);
             }
             catch (error) {
                 console.error("Error. No card found:", error);
@@ -36,9 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tarotIntro.classList.add("hidden");
     }
     ;
-    function showCard(data) {
-        const card = data.cards[0];
-        responses.push(card);
+    function showCard(card) {
         console.log(responses);
         const cardTitle = document.createElement('h2');
         cardTitle.textContent = card.name;
@@ -51,7 +50,18 @@ document.addEventListener('DOMContentLoaded', () => {
         tarotCardResponse.appendChild(div);
         tarotCardResponse.classList.add("responseContainer");
         tarotCardResponse.classList.remove("hidden");
+        createNextCardButton(card);
         createVibeButtons(card);
+    }
+    ;
+    function createNextCardButton(card) {
+        const buttonAgain = document.createElement('button');
+        buttonAgain.innerText = "Try again... if you dare";
+        buttonAgain.classList.add("button");
+        buttonAgain.classList.add("button");
+        // buttonAgain.addEventListener("click", () => addResponse(card));
+        buttonAgain.addEventListener("click", getCard);
+        tarotCardResponse.appendChild(buttonAgain);
     }
     ;
     function createVibeButtons(card) {
@@ -59,24 +69,21 @@ document.addEventListener('DOMContentLoaded', () => {
         divButtons.id = "buttonContainer";
         divButtons.classList.add("divButtons");
         const vibes = ["PAST", "PRESENT", "FUTURE"];
-        // const divButtons = document.getElementById("buttonContainer");
         const buttonPast = document.createElement('button');
         buttonPast.innerText = "Reflects my past";
         buttonPast.classList.add("vibeButtons");
         buttonPast.id = "PAST";
-        buttonPast.addEventListener("click", () => addResponse(card, "PAST"));
+        buttonPast.addEventListener("click", () => addVibe("PAST"));
         const buttonPresent = document.createElement('button');
         buttonPresent.innerText = "Reflects my present";
         buttonPresent.classList.add("vibeButtons");
-        buttonPresent.addEventListener("click", getCard);
         buttonPresent.id = "PRESENT";
-        buttonPresent.addEventListener("click", () => addResponse(card, "PRESENT"));
+        buttonPresent.addEventListener("click", () => addVibe("PRESENT"));
         const buttonFuture = document.createElement('button');
         buttonFuture.innerText = "Reflects my future";
         buttonFuture.classList.add("vibeButtons");
-        buttonFuture.addEventListener("click", getCard);
         buttonFuture.id = "FUTURE";
-        buttonFuture.addEventListener("click", () => addResponse(card, "FUTURE"));
+        buttonFuture.addEventListener("click", () => addVibe("FUTURE"));
         divButtons.appendChild(buttonPast);
         divButtons.appendChild(buttonPresent);
         divButtons.appendChild(buttonFuture);
