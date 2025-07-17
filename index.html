@@ -6,37 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Ana Laf">
     <meta name="description" content="ITA Sprint 4">
-    <link rel="icon" type="image/x-icon" href="./assets/icons8-magic-crystal-ball-48.png">
-
     
+    <link rel="icon" href="./assets/icons8-magic-crystal-ball-48.png" type="image/png">
+    <link rel="stylesheet" href="./styles/basic.css">
+    <link rel="stylesheet" href="./styles/background.css">
+
     <title>Tarot API</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="./assets/icons8-magic-crystal-ball-48.png" type="image/x-icon">
+    
 
 </head>
 <body>
-    
 
-    <div class="titleContainer">
-        <h1>Discover your future</h1>
-        <br>
-        <p>Think of your question. Concentrate.</p>
-        <p>Your future is a card away.</p>
-        <br>
-        <button id="getCard" type="button">Get a card</button>
-    </div>
+   <main>
+        <div id="titleContainer" class="titleContainer">
+            <h1>Discover your future</h1>
+            <br>
+            <p>Think of your question. Concentrate.</p>
+            <p>Your future is a card away.</p>
+            <br>
+            <div>
+                <button id="getCard" type="button">Get a card</button>
+            </div>
+        </div>
 
-    <div id="responseContainer">
-    </div>
+        <div id="responseContainer" class="responseContainer hidden"></div>
+
+    </main> 
 
 
 
-    <!-- <div class="galaxy">
+    <div class="galaxy">
         <div class="stars1"></div>
         <div class="stars2"></div>
         <div class="stars3"></div>
-    </div> -->
+    </div>
 
-    
+    <!-- <script>var exports = {};</script> -->
+    <script type="module" src="./build/index.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,89 @@
+h1,h2 {
+    font-size: 20px;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    opacity: 100%;
+    margin: 10px;
+
+}
+
+p {
+    font-size: 15px;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button {
+    color: black;
+    background-color: aqua;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    padding: 10px;
+    opacity: 100%;
+    margin-top: 20px;
+}
+
+.titleContainer {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 1em 10em
+
+}
+
+.responseContainer {
+    padding: 25px;
+    display: block;
+    text-align: center;
+    margin: 1em;
+}
+
+main {
+    background-color: black;
+    position: relative;
+    z-index: 4;
+    padding: 1em 10e;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    opacity: 80%;
+
+}
+
+.hidden {
+  display: none;
+}
+
+.divButtons {
+    color: black;
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    padding: 10px;
+    opacity: 100%;
+    margin-top: 20px;
+}
+
+/* .divButtons {
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 1em;
+} */
+
+.vibeButtons {
+    color: black;
+    background-color: rosybrown;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    padding: 10px;
+    opacity: 100%;
+    margin: 20px 10px;
+}
+
+.vibeButtons:hover {
+    background-color: salmon
+}
+
+
