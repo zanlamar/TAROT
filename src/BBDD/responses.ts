@@ -1,7 +1,6 @@
 "use strict"
 
-import { TarotCard, UserFeedback, CardReading } from "../types/tarot.types"
-
+import { TarotCard, UserFeedback, CardReading } from "../features/cardReading/TYPES"
 
 export const responses: CardReading[] = [];
 

@@ -1,7 +1,9 @@
 "use strict"
 
-import { TarotCardResponse, TarotCard, UserFeedback, CardReading } from "./types/tarot.types.js";
+import { TarotCardResponse, TarotCard, UserFeedback, CardReading } from "./features/cardReading/TYPES.js";
 import { addResponse, responses, addVibe, getAllResponses } from "./BBDD/responses.js";
+import { getCard } from "./features/cardReading/LOGICgetCard.js"
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -10,94 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tarotIntro = document.getElementById("titleContainer") as HTMLDivElement;
 
     button.addEventListener("click", getCard);
-    
-    async function getCard(): Promise <void> {
-        try {
-            const res = await fetch('https://tarotapi.dev/api/v1/cards/random?n=1');
-            const data: TarotCardResponse = await res.json();
-            const card: TarotCard = data.cards[0];
-            console.log(data);
-            clearDiv();
-            showCard(card);
-            addResponse(card)
-                
-        } catch (error) {
-            console.error("Error. No card found:", error);
-        };
-    };
-
-    function clearDiv(): void {
-        tarotCardResponse.textContent = '';
-        tarotIntro.classList.add("hidden");
-    };
-        
-
-    function showCard(card: TarotCard): void {
-            
-        console.log(responses);
-
-        const cardTitle = document.createElement('h2');
-        cardTitle.textContent = card.name;
-
-        const cardDescription = document.createElement('p');
-        cardDescription.textContent = card.meaning_up;
-
-        // SHOW RESULT
-        const div = document.createElement('div');
-        div.appendChild(cardTitle);
-        div.appendChild(cardDescription);
-        tarotCardResponse.appendChild(div);
-
-        tarotCardResponse.classList.add("responseContainer");
-        tarotCardResponse.classList.remove("hidden");
-
-        createNextCardButton(card);
-        createVibeButtons(card);
-    };
-
-    function createNextCardButton(card: TarotCard) : void {
-
-        const buttonAgain = document.createElement('button');
-        buttonAgain.innerText = "Try again... if you dare"
-        buttonAgain.classList.add("button");
-        buttonAgain.classList.add("button");
-        // buttonAgain.addEventListener("click", () => addResponse(card));
-        buttonAgain.addEventListener("click", getCard);
-
-        tarotCardResponse.appendChild(buttonAgain);
-    };
-        
-    function createVibeButtons(card: TarotCard) : void {
-
-        const divButtons = document.createElement('div');
-        divButtons.id = "buttonContainer"
-        divButtons.classList.add("divButtons");
-        
-        const vibes: UserFeedback[] = ["PAST", "PRESENT", "FUTURE"];
-        
-        const buttonPast = document.createElement('button');
-        buttonPast.innerText = "Reflects my past";
-        buttonPast.classList.add("vibeButtons");
-        buttonPast.id = "PAST";
-        buttonPast.addEventListener("click", () => addVibe("PAST"));
-
-        const buttonPresent = document.createElement('button');
-        buttonPresent.innerText = "Reflects my present";
-        buttonPresent.classList.add("vibeButtons");
-        buttonPresent.id = "PRESENT";
-        buttonPresent.addEventListener("click", () => addVibe("PRESENT"));
-
-        const buttonFuture = document.createElement('button');
-        buttonFuture.innerText = "Reflects my future";
-        buttonFuture.classList.add("vibeButtons");
-        buttonFuture.id = "FUTURE";
-        buttonFuture.addEventListener("click", () => addVibe("FUTURE"));
-
-        divButtons.appendChild(buttonPast);
-        divButtons.appendChild(buttonPresent);
-        divButtons.appendChild(buttonFuture);
-        tarotCardResponse.appendChild(divButtons);
-    };
 
 });
+
 
