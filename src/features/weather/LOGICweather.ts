@@ -4,13 +4,9 @@
 // import { dotenv } from "dotenv";
 // config();
 
-import type { Location, Coordinates } from "./TYPES.js"
-
+import type { Location, Coordinates, WeatherAPIResponse, WeatherCondition, CurrentWeather } from "./TYPES.js"
 const APIKey = import.meta.env.VITE_API_KEY;
-if (!APIKey) {
-  throw new Error("API_KEY is missing");
-}
-// const weatherURL = `https://api.weatherapi.com/v1/current.json?key=${APIKey}&q=`
+
 
 const defaultLatitudeWeather: number = 41.3851;
 const defaultLongitudeWeather: number = 2.1734;
@@ -18,7 +14,7 @@ const defaultCity: string ='Barcelona';
 
 
 function getCurrentPositionAsync(options?: any): Promise<any> {
-
+    
     return new Promise((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(resolve, reject, options)
     })
@@ -48,3 +44,25 @@ const requestConfig = {
     },
 }
 
+
+export async function getWeather(latitude: number, longitude: number): Promise<WeatherAPIResponse | undefined> {
+    if (!APIKey) {
+        throw new Error("API_KEY is missing");
+    };
+    
+    const WEATHER_URL = "https://api.weatherapi.com/v1/current.json"
+    const query = `${latitude},${longitude}`;
+    const url = `${WEATHER_URL}?key=${APIKey}&q=${query}`;
+
+    try {
+        const response = await fetch(url, requestConfig);
+        if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+
+        const data: WeatherAPIResponse = await response.json();
+        console.log("the weather is...", data);
+        return data;
+    } catch (error) {
+        console.error("Error getting the weather", error);
+    }
+};
+    
