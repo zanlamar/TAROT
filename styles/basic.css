@@ -2,9 +2,9 @@ h1,h2 {
     font-size: 20px;
     color: #fff;
     font-family: 'Courier New', Courier, monospace;
-    opacity: 100%;
+    opacity: 1;
     margin: 10px;
-
+    font-style: bold;
 }
 
 p {
@@ -21,6 +21,8 @@ button {
     padding: 10px;
     opacity: 100%;
     margin-top: 20px;
+    border: none;
+    border-radius: 10px;
 }
 
 .titleContainer {
@@ -28,26 +30,28 @@ button {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
-    padding: 1em 10em
+    padding: 1em 10em;
+    max-width: 700px;
 
 }
 
 .responseContainer {
     padding: 25px;
-    display: block;
     text-align: center;
     margin: 1em;
+    max-width: 700px;
 }
 
-main {
-    background-color: black;
+.mainContainer {
+    background-color: rgba(0, 0, 0, 0.6); /* negro con opacidad */
     position: relative;
     z-index: 4;
-    padding: 1em 10e;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    opacity: 80%;
-
+    padding: 1em;
+    margin: 20px auto;
+    border-radius: 12px;
+    backdrop-filter: blur(2px);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    max-width: 800px;
 }
 
 .hidden {
@@ -56,21 +60,12 @@ main {
 
 .divButtons {
     color: black;
-    background-color: black;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     padding: 10px;
     opacity: 100%;
     margin-top: 20px;
 }
-
-/* .divButtons {
-    padding: 25px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin: 1em;
-} */
 
 .vibeButtons {
     color: black;
@@ -80,10 +75,34 @@ main {
     padding: 10px;
     opacity: 100%;
     margin: 20px 10px;
+    border-radius: 10px;
 }
 
 .vibeButtons:hover {
     background-color: salmon
 }
+
+#weatherContainer {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1rem;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    
+    background-color: rgba(0, 0, 0, 0.4); 
+    backdrop-filter: blur(3px); 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    
+    position: relative;
+    z-index: 11;
+    margin: 1rem auto;
+}
+
+
+
 
 

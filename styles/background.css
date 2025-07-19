@@ -1,10 +1,8 @@
-* {
+
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
     width: 100%;
     height: 100vh;
     position: relative;
@@ -17,6 +15,7 @@ body {
 }
 
 .galaxy {
+    position: fixed; 
     width: 100%;
     height: 100vh;
     position: absolute;
@@ -24,6 +23,7 @@ body {
     z-index: 0;
     top: 0;
     left: 0;
+    pointer-events: none;
 
 }
 
@@ -400,8 +400,6 @@ body {
     659px 1860px #fff, 388px 1412px #fff, 1212px 458px #fff, 755px 1468px #fff,
     696px 1654px #fff, 1144px 60px #fff;
 }
-
-
 
 .stars2 {
     z-index: 3;
