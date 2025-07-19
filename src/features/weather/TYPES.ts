@@ -25,17 +25,17 @@ export interface CurrentWeather {
   humidity: number;
 }
 
-// interface LocationInfo {
-//   name: string;
-//   region: string;
-//   country: string;
-//   lat: number;
-//   lon: number;
-//   localtime: string;
-// }
+export interface LocationInfo {
+  name: string;
+  region: string;
+  country: string;
+  lat: number;
+  lon: number;
+  localtime: string;
+}
 
 export interface WeatherAPIResponse {
-  location: Location;
+  location: LocationInfo;
   current: CurrentWeather;
-}
+};
 

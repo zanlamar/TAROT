@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', async () => {
     const coordinates = await getCoordinates();
     const weather = await getWeather(coordinates.latitude, coordinates.longitude);
+    if (!weather)
+        return;
     navigator.geolocation.getCurrentPosition((position) => {
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
@@ -17,5 +19,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     }, () => {
         getWeather(41.3851, 2.1734); // default Barcelona
     });
+    const divlocation = document.getElementById("weatherLocation");
+    const divtemperature = document.getElementById("weatherTemperature");
+    const divcondition = document.getElementById("weatherCondition");
+    if (divlocation) {
+        divlocation.textContent = weather.location.name;
+    }
+    if (divtemperature) {
+        divtemperature.textContent = `${weather.current.temp_c}°C`;
+    }
+    if (divcondition) {
+        const iconURL = `https:${weather.current.condition.icon}`;
+        divcondition.innerHTML = `
+      <img src="${iconURL}" alt="${weather.current.condition.text}"/>
+      `;
+    }
+    // <span>${weather.current.condition.text}</span>
 });
 //# sourceMappingURL=index.js.map
