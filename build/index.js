@@ -1,6 +1,7 @@
 "use strict";
 import { getCard } from "./features/cardReading/LOGICgetCard.js";
 import { getCoordinates, getWeather } from "./features/weather/LOGICweather.js";
+import { printWeather } from "./features/weather/DOMdisplay.js";
 document.addEventListener('DOMContentLoaded', () => {
     const button = document.querySelector("#getCard");
     const tarotCardResponse = document.getElementById("responseContainer");
@@ -19,21 +20,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }, () => {
         getWeather(41.3851, 2.1734); // default Barcelona
     });
-    const divlocation = document.getElementById("weatherLocation");
-    const divtemperature = document.getElementById("weatherTemperature");
-    const divcondition = document.getElementById("weatherCondition");
-    if (divlocation) {
-        divlocation.textContent = weather.location.name;
-    }
-    if (divtemperature) {
-        divtemperature.textContent = `${weather.current.temp_c}°C`;
-    }
-    if (divcondition) {
-        const iconURL = `https:${weather.current.condition.icon}`;
-        divcondition.innerHTML = `
-      <img src="${iconURL}" alt="${weather.current.condition.text}"/>
-      `;
-    }
-    // <span>${weather.current.condition.text}</span>
+    printWeather(weather);
 });
 //# sourceMappingURL=index.js.map

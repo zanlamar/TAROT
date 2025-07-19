@@ -4,7 +4,7 @@ h1,h2 {
     font-family: 'Courier New', Courier, monospace;
     opacity: 1;
     margin: 10px;
-
+    font-style: bold;
 }
 
 p {
@@ -46,11 +46,12 @@ button {
     background-color: rgba(0, 0, 0, 0.6); /* negro con opacidad */
     position: relative;
     z-index: 4;
-    padding: 1em 10em;
-    margin: 20px 0;
-    border-radius: 10px;
+    padding: 1em;
+    margin: 20px auto;
+    border-radius: 12px;
     backdrop-filter: blur(2px);
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    max-width: 800px;
 }
 
 .hidden {
@@ -84,9 +85,9 @@ button {
 #weatherContainer {
     display: flex;
     gap: 1rem;
-    align-items: start;
-    justify-content: flex-start;
-    padding: 1rem 2rem;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1rem;
     color: white;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;

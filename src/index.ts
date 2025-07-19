@@ -6,6 +6,7 @@ import { addResponse, responses, addVibe, getAllResponses } from "./BBDD/respons
 import { getCard } from "./features/cardReading/LOGICgetCard.js"
 
 import { getCoordinates, getWeather } from "./features/weather/LOGICweather.js";
+import { printWeather } from "./features/weather/DOMdisplay.js";
 
 
 
@@ -33,29 +34,11 @@ document.addEventListener('DOMContentLoaded', async() => {
       },
       () => {
         getWeather(41.3851, 2.1734); // default Barcelona
-        printWeather();
       }
     );
 
+    printWeather(weather);
 
-    const divlocation = document.getElementById("weatherLocation") as HTMLDivElement;
-    const divtemperature = document.getElementById("weatherTemperature")as HTMLDivElement;
-    const divcondition = document.getElementById("weatherCondition") as HTMLDivElement;
-
-    if (divlocation) {
-      divlocation.textContent = weather.location.name;
-    }
-
-    if (divtemperature) {
-      divtemperature.textContent = `${weather.current.temp_c}°C`;
-    }
-
-    if (divcondition) {
-      const iconURL = `https:${weather.current.condition.icon}`;
-      divcondition.innerHTML = `
-      <img src="${iconURL}" alt="${weather.current.condition.text}" style:"small"/>
-      `;
-    }
 });
 
 
