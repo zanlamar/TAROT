@@ -31,7 +31,7 @@ export function createNextCardButton(card) {
     const tarotCardResponse = document.getElementById("responseContainer");
     const tarotIntro = document.getElementById("titleContainer");
     const buttonAgain = document.createElement('button');
-    buttonAgain.innerText = "Try again... if you dare";
+    buttonAgain.innerText = "Try again";
     buttonAgain.classList.add("button");
     buttonAgain.classList.add("button");
     buttonAgain.addEventListener("click", getCard);

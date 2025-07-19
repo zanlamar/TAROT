@@ -13,13 +13,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const weather = await getWeather(coordinates.latitude, coordinates.longitude);
     if (!weather)
         return;
-    navigator.geolocation.getCurrentPosition((position) => {
-        const lat = position.coords.latitude;
-        const lon = position.coords.longitude;
-        getWeather(lat, lon);
-    }, () => {
-        getWeather(41.3851, 2.1734); // default Barcelona
-    });
     printWeather(weather);
 });
 //# sourceMappingURL=index.js.map

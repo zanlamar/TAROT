@@ -1,28 +1,33 @@
 h1,h2 {
-    font-size: 20px;
+    font-size: 30px;
     color: #fff;
-    font-family: 'Courier New', Courier, monospace;
+    font-family:  "Press Start 2P", system-ui;
     opacity: 1;
     margin: 10px;
-    font-style: bold;
+    font-weight: 400;
+    font-style: normal;
 }
 
 p {
     font-size: 15px;
     color: #fff;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Work Sans", sans-serif;
 }
 
 button {
     color: black;
     background-color: aqua;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
+    font-family:  "Press Start 2P", system-ui;
+    /* font-weight: bold; */
     padding: 10px;
     opacity: 100%;
     margin-top: 20px;
     border: none;
     border-radius: 10px;
+}
+.button:hover {
+    background-color: black;
+    color: aqua;
 }
 
 .titleContainer {
@@ -48,7 +53,7 @@ button {
     z-index: 4;
     padding: 1em;
     margin: 20px auto;
-    border-radius: 12px;
+    /* border-radius: 12px; */
     backdrop-filter: blur(2px);
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     max-width: 800px;
@@ -60,7 +65,7 @@ button {
 
 .divButtons {
     color: black;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier new", monospace;
     font-weight: bold;
     padding: 10px;
     opacity: 100%;
@@ -68,9 +73,9 @@ button {
 }
 
 .vibeButtons {
-    color: black;
-    background-color: rosybrown;
-    font-family: 'Courier New', Courier, monospace;
+    background-color: black;
+    color: greenyellow;
+    font-family:"Courier new", monospace;
     font-weight: bold;
     padding: 10px;
     opacity: 100%;
@@ -79,7 +84,8 @@ button {
 }
 
 .vibeButtons:hover {
-    background-color: salmon
+    color: black;
+    background-color: greenyellow;
 }
 
 #weatherContainer {
@@ -89,12 +95,11 @@ button {
     justify-content: center;
     padding: 1rem 1rem;
     color: white;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    
+    font-family: "Press Start 2P", system-ui;
+    font-size: small;
     background-color: rgba(0, 0, 0, 0.4); 
     backdrop-filter: blur(3px); 
-    border-radius: 10px;
+    /* border-radius: 10px; */
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     
     position: relative;

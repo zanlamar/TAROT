@@ -42,7 +42,7 @@ export function createNextCardButton(card: TarotCard) : void {
     const tarotIntro = document.getElementById("titleContainer") as HTMLDivElement;
 
     const buttonAgain = document.createElement('button');
-    buttonAgain.innerText = "Try again... if you dare"
+    buttonAgain.innerText = "Try again"
     buttonAgain.classList.add("button");
     buttonAgain.classList.add("button");
     buttonAgain.addEventListener("click", getCard);
