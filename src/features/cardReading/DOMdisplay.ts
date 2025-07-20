@@ -3,6 +3,7 @@
 import { TarotCard, UserFeedback } from "./TYPES.js";
 import { responses, addVibe } from "../../BBDD/responses.js"
 import { getCard } from "./LOGICgetCard.js";
+import { decideFortune } from "../../index.js";
 
 export function clearDiv(): void {
     const tarotCardResponse = document.getElementById("responseContainer") as HTMLDivElement;
@@ -42,10 +43,10 @@ export function createNextCardButton(card: TarotCard) : void {
     const tarotIntro = document.getElementById("titleContainer") as HTMLDivElement;
 
     const buttonAgain = document.createElement('button');
-    buttonAgain.innerText = "Try again... if you dare"
+    buttonAgain.innerText = "Try again"
     buttonAgain.classList.add("button");
     buttonAgain.classList.add("button");
-    buttonAgain.addEventListener("click", getCard);
+    buttonAgain.addEventListener("click", decideFortune);
 
     tarotCardResponse.appendChild(buttonAgain);
 };
