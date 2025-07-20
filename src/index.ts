@@ -7,6 +7,7 @@ import { getCard } from "./features/cardReading/LOGICgetCard.js"
 
 import { getCoordinates, getWeather } from "./features/weather/LOGICweather.js";
 import { printWeather } from "./features/weather/DOMdisplay.js";
+import { getCookie } from "./features/fortuneCookie/LOGICfortune.js";
 
 
 
@@ -17,6 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const tarotIntro = document.getElementById("titleContainer") as HTMLDivElement;
 
     button.addEventListener("click", getCard);
+    button.addEventListener("click", getCookie);
+
 
 });
 
@@ -28,6 +31,8 @@ document.addEventListener('DOMContentLoaded', async() => {
     printWeather(weather);
 
 });
+
+
 
 
 
