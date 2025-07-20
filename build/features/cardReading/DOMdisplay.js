@@ -1,6 +1,6 @@
 "use strict";
 import { responses, addVibe } from "../../BBDD/responses.js";
-import { getCard } from "./LOGICgetCard.js";
+import { decideFortune } from "../../index.js";
 export function clearDiv() {
     const tarotCardResponse = document.getElementById("responseContainer");
     const tarotIntro = document.getElementById("titleContainer");
@@ -34,7 +34,7 @@ export function createNextCardButton(card) {
     buttonAgain.innerText = "Try again";
     buttonAgain.classList.add("button");
     buttonAgain.classList.add("button");
-    buttonAgain.addEventListener("click", getCard);
+    buttonAgain.addEventListener("click", decideFortune);
     tarotCardResponse.appendChild(buttonAgain);
 }
 ;

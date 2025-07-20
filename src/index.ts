@@ -11,18 +11,6 @@ import { getCookie } from "./features/fortuneCookie/LOGICfortune.js";
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    
-    const button = document.querySelector("#getCard") as HTMLButtonElement;
-    const tarotCardResponse = document.getElementById("responseContainer") as HTMLDivElement;
-    const tarotIntro = document.getElementById("titleContainer") as HTMLDivElement;
-
-    button.addEventListener("click", getCard);
-    button.addEventListener("click", getCookie);
-
-
-});
-
 document.addEventListener('DOMContentLoaded', async() => {
     const coordinates = await getCoordinates();
     const weather = await getWeather(coordinates.latitude, coordinates.longitude);
@@ -31,6 +19,23 @@ document.addEventListener('DOMContentLoaded', async() => {
     printWeather(weather);
 
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const button = document.querySelector("#getCard") as HTMLButtonElement;
+    button.addEventListener("click", decideFortune)
+    
+});
+
+export function decideFortune() {
+    const random = Math.random() < 0.2;
+
+    try {
+        (random)? getCookie() : getCard();
+    } catch (error) {
+        console.error(error);
+    }
+
+}
 
 
 

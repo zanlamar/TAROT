@@ -14,7 +14,7 @@ const requestConfigCookie = {
 }
 
 
-export async function getCookie(): Promise <any> {
+export async function getCookie(): Promise <fortuneMessage | undefined> {
     if (!APIKeyCookie) {
         throw new Error("API_KEY_COOKIE is missing");
     };
@@ -27,12 +27,11 @@ export async function getCookie(): Promise <any> {
         if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
 
             const data: fortuneResponse = await response.json();
-            const cookie: fortuneMessage = data
             console.log("test");
-            console.log(cookie);
+            console.log(data.fortune);
 
-        return cookie;
-        
+        return data;
+
     } catch (error) {
         console.error("Error getting the weather", error);
     }
