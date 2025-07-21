@@ -1,6 +1,9 @@
 "use strict"
 
-import { fortuneResponse, fortuneMessage } from "./TYPES.js"    
+import { fortuneResponse, fortuneMessage } from "./TYPES.js";
+import { addResponse } from "../../BBDD/responses.js";
+import { showCookie, clearDiv } from "../fortuneCookie/DOMdisplay.js"
+ 
 
 
 const APIKeyCookie = import.meta.env.VITE_API_COOKIE_KEY;
@@ -29,6 +32,10 @@ export async function getCookie(): Promise <fortuneMessage | undefined> {
             const data: fortuneResponse = await response.json();
             console.log("test");
             console.log(data.fortune);
+
+            clearDiv();
+            showCookie(data);
+            addResponse({ type: "cookie", fortune: data.fortune });
 
         return data;
 

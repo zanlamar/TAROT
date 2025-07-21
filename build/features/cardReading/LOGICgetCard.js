@@ -10,7 +10,7 @@ export async function getCard() {
         console.log(data);
         clearDiv();
         showCard(card);
-        addResponse(card);
+        addResponse({ type: "tarot", card });
     }
     catch (error) {
         console.error("Error. No card found:", error);
