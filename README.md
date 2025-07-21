@@ -7,27 +7,28 @@ Fourth sprint of the bootcamp, focused on API calls and TypeScript.
 I apply a twist to the project: instead of jokes, I created a fortune teller website.
 
 ## 🎯 Objectives
-- Learn to **manipulate APIs** .
-- Implement **TypeScript**.
+- Practice how to **fetch and manipulate data from APIs**
+- Learn and apply **TypeScript** for type safety and structure
+- Improve project architecture and separation of concerns
 
 
 ## 💻 Technologies Used
-- HTML5
-- CSS
-- JavaScript
-- TypeScript
+- **HTML5**
+- **CSS3**
+- **JavaScript (ES6)**
+- **TypeScript**
+- **Vite**
 
 
 ## 📋 Requirements
 
 - Modern web browser (Chrome, Firefox, Edge, etc.).
-- Node.js
-- npm
+- Node.js + npm
 - API keys from:
   - API key from [Weather API](https://www.weatherapi.com/)
   - Cookie fortune [here](https://docs.erensko.site/docs/api-keys/getting-your-key)
 
-## Developer decitions
+## Developer decisions
 - The first reading is not shown when launched the website: the goal is to click to then see the fortune.
 - The DOMdisplay of each feature is separated from one another in order to personalized how each one is seen on the browser (the tarot card is missing still, but with this independent structure it will be easier to change)
 - Only HTML and CSS for styling: minimal and appealing to the look&feel of the project
@@ -60,8 +61,18 @@ $ npm run dev
 
 
 ## 📁 Project Structure
-The project was developed in three branches: `main` `develop` and one per feature `feature`.
-Each feature (weather API, fortune cookie API and tarot card API) has its own logic, typescript types, and DOM manipulation.
+The project is **modular** and organized into three main features:
+
+🌤️ Weather API
+🥠 Fortune Cookie API
+🔮 Tarot Card API
+
+Each feature contains:
+- Its own **logic**
+- Dedicated **TypeScript types**
+- **Independent DOM rendering** logic
+
+
 
 ---
 
@@ -98,8 +109,8 @@ Each feature (weather API, fortune cookie API and tarot card API) has its own lo
 
 ---
 
-## 📋 Pending improvements
-- addVibe buttons to be turned into a *for* loop.
+## 🚧 Pending improvements
+- ``addVibe`` buttons to be turned into a ``for`` loop.
 - When tarot read, image to be seen on screen.
 - Improve the styles and button transitions.
 
@@ -108,4 +119,5 @@ Each feature (weather API, fortune cookie API and tarot card API) has its own lo
 ### ⭐ Highlights
 
 - Many many many learnings.
+- Technically challenging project.
 ---
