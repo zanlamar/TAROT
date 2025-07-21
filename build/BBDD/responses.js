@@ -1,8 +1,8 @@
 "use strict";
 export const responses = [];
-export function addResponse(card, vibe) {
+export function addResponse(reading, vibe) {
     responses.push({
-        card,
+        reading,
         vibe,
         timestamp: new Date().toISOString()
     });

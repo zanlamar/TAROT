@@ -1,12 +1,12 @@
 "use strict"
 
-import { TarotCard, UserFeedback, CardReading } from "../features/cardReading/TYPES"
+import { TarotCard, UserFeedback, CardReading, FortuneType } from "../features/cardReading/TYPES"
 
 export const responses: CardReading[] = [];
 
-export function addResponse(card: TarotCard, vibe?: UserFeedback): void {
+export function addResponse(reading: FortuneType, vibe?: UserFeedback): void {
   responses.push({
-    card,
+    reading,
     vibe,
     timestamp: new Date().toISOString()
   });
