@@ -43,7 +43,7 @@ I apply a twist to the project: instead of jokes, I created a fortune teller web
 1. Clone this repo
 
 ```bash
-$ git clone https://github.com/antoniofelices/jokes-and-weather .
+$ git clone https://github.com/zanlamar/TAROT
 ```
 
 2. Install packages
