@@ -4,3 +4,12 @@ build
 
 # key
 .env
+
+# # Ignore all .log files except important.log
+# *.log
+# !important.log
+
+# Ignore the "build" directory
+build/
+
+

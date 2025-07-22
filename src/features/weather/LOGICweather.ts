@@ -59,7 +59,6 @@ export async function getWeather(latitude: number, longitude: number): Promise<W
         if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
 
         const data: WeatherAPIResponse = await response.json();
-        console.log("the weather is...", data);
         return data;
     } catch (error) {
         console.error("Error getting the weather", error);

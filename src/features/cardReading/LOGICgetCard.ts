@@ -10,9 +10,6 @@ export async function getCard(): Promise <void> {
             const data: TarotCardResponse = await res.json();
             const card: TarotCard = data.cards[0];
 
-            console.log("test");
-            console.log(data);
-
             clearDiv();
             showCard(card);
             addResponse({ type: "tarot", card });
