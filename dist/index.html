@@ -8,38 +8,52 @@
     <meta name="description" content="ITA Sprint 4">
     
     <link rel="icon" href="/assets/icons8-magic-crystal-ball-48-C--NkwR4.png" type="image/png">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+
 
     <title>Tarot API</title>
     
 
-  <script type="module" crossorigin src="/assets/index-BCLaMdx5.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-DMT66Wy6.css">
+  <script type="module" crossorigin src="/assets/index-V7NF5MBo.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BZcOFJRG.css">
 </head>
 <body>
-
-   <main>
-        <div id="titleContainer" class="titleContainer">
-            <h1>Discover your future</h1>
-            <br>
-            <p>Think of your question. Concentrate.</p>
-            <p>Your future is a card away.</p>
-            <br>
-            <div>
-                <button id="getCard" type="button">Get a card</button>
-            </div>
-        </div>
-
-        <div id="responseContainer" class="responseContainer hidden"></div>
-
-    </main> 
-
-
-
     <div class="galaxy">
         <div class="stars1"></div>
         <div class="stars2"></div>
         <div class="stars3"></div>
     </div>
+
+    <div class="mainContainer">
+        <nav id="weatherContainer">
+            <div id="weatherLocation"></div>
+            <div id="weatherCondition"></div>
+            <div id="weatherIcon"></div>
+            <div id="weatherTemperature"></div>
+        </nav>
+
+        <main></main>
+            <div id="titleContainer" class="titleContainer">
+                <h1>Discover your future</h1>
+                <br>
+                <p>Think of your question. Concentrate.</p>
+                <p>Your future is a card away.</p>
+                <br>
+                <div>
+                    <button id="getCard" class="button" type="button">Get a card</button>
+                </div>
+            </div>
+
+            <div id="responseContainer" class="responseContainer hidden"></div>
+
+        </main> 
+    </div>
+
+
+
+
 
     <!-- <script>var exports = {};</script> -->
 

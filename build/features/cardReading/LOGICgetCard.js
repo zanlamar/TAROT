@@ -6,8 +6,6 @@ export async function getCard() {
         const res = await fetch('https://tarotapi.dev/api/v1/cards/random?n=1');
         const data = await res.json();
         const card = data.cards[0];
-        console.log("test");
-        console.log(data);
         clearDiv();
         showCard(card);
         addResponse({ type: "tarot", card });
