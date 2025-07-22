@@ -23,7 +23,7 @@ I apply a twist to the project: instead of jokes, I created a fortune teller web
 ## 📋 Requirements
 
 - Modern web browser (Chrome, Firefox, Edge, etc.).
-- Node.js + npm
+- Node.js (v18 or superior)
 - API keys from:
   - API key from [Weather API](https://www.weatherapi.com/)
   - Cookie fortune [here](https://docs.erensko.site/docs/api-keys/getting-your-key)
