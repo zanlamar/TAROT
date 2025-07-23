@@ -30,7 +30,6 @@ export async function getCookie(): Promise <fortuneMessage | undefined> {
         if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
 
             const data: fortuneResponse = await response.json();
-            console.log("test");
             console.log(data.fortune);
 
             clearDiv();

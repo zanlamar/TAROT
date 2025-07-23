@@ -1,4 +1,3 @@
-// tipos globales
 
 export interface TarotCardResponse {
   nhits: number;

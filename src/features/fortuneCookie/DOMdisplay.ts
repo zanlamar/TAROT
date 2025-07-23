@@ -1,6 +1,5 @@
 "use strict"
 
-import { getCookie } from "./LOGICfortune.js"
 import { fortuneResponse, fortuneMessage,  } from "./TYPES.js";
 import { decideFortune } from "../../index.js";
 import { UserFeedback } from "../cardReading/TYPES.js";
@@ -66,7 +65,7 @@ export function createVibeButtons(data: fortuneResponse): void {
 
     vibes.forEach((vibe) => {
         const button = document.createElement('button');
-        button.innerText = `Reflects my ${vibe.toLowerCase()}`;
+        button.innerText = `Reflects my ${vibe}`;
         button.classList.add("vibeButtons");
         button.id = vibe;
         button.addEventListener("click", () => addVibe(vibe));

@@ -2,7 +2,6 @@
 
 import { TarotCard, UserFeedback } from "./TYPES.js";
 import { responses, addVibe } from "../../BBDD/responses.js"
-import { getCard } from "./LOGICgetCard.js";
 import { decideFortune } from "../../index.js";
 
 export function clearDiv(): void {
