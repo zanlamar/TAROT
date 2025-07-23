@@ -1,10 +1,5 @@
-// import * as dotenv from 'dotenv'
-// import dotenv from 'dotenv';
-// import { config } from "dotenv";
-// import { dotenv } from "dotenv";
-// config();
 
-import type { Location, Coordinates, WeatherAPIResponse, WeatherCondition, CurrentWeather } from "./TYPES.js"
+import type { Coordinates, WeatherAPIResponse } from "./TYPES.js"
 const APIKey = import.meta.env.VITE_API_KEY;
 
 

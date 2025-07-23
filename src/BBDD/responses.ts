@@ -1,6 +1,6 @@
 "use strict"
 
-import { TarotCard, UserFeedback, CardReading, FortuneType } from "../features/cardReading/TYPES"
+import { UserFeedback, CardReading, FortuneType } from "../features/cardReading/TYPES"
 
 export const responses: CardReading[] = [];
 

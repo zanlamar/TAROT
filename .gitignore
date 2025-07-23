@@ -11,5 +11,5 @@ build
 
 # Ignore the "build" directory
 build/
-
+dist/
 

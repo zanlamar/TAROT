@@ -10,7 +10,6 @@ export interface Coordinates {
     city?: string
 }
 
-
 export interface WeatherCondition {
   text: string;
   icon: string;

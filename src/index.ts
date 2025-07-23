@@ -1,8 +1,6 @@
 
 "use strict"
 
-import { TarotCardResponse, TarotCard, UserFeedback, CardReading } from "./features/cardReading/TYPES.js";
-import { addResponse, responses, addVibe, getAllResponses } from "./BBDD/responses.js";
 import { getCard } from "./features/cardReading/LOGICgetCard.js"
 
 import { getCoordinates, getWeather } from "./features/weather/LOGICweather.js";
