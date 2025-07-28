@@ -1,11 +1,9 @@
 "use strict"
 
-import { fortuneResponse, fortuneMessage } from "./TYPES.js";
+import { fortuneResponse, FortuneType } from "./TYPES.js";
 import { addResponse } from "../../BBDD/responses.js";
 import { showCookie, clearDiv } from "../fortuneCookie/DOMdisplay.js"
  
-
-
 const APIKeyCookie = import.meta.env.VITE_API_COOKIE_KEY;
 
 const requestConfigCookie = {
@@ -17,7 +15,7 @@ const requestConfigCookie = {
 }
 
 
-export async function getCookie(): Promise <fortuneMessage | undefined> {
+export async function getCookie(): Promise <FortuneType | null> {
     if (!APIKeyCookie) {
         throw new Error("API_KEY_COOKIE is missing");
     };
@@ -30,15 +28,18 @@ export async function getCookie(): Promise <fortuneMessage | undefined> {
         if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
 
             const data: fortuneResponse = await response.json();
-            console.log(data.fortune);
+            // console.log(data.fortune);
+
+            const fortune: FortuneType = { type: "cookie", fortune: data.fortune };
 
             clearDiv();
             showCookie(data);
-            addResponse({ type: "cookie", fortune: data.fortune });
+            addResponse(fortune);
 
-        return data;
+        return fortune;
 
     } catch (error) {
         console.error("Error getting the weather", error);
+        return null
     }
 };

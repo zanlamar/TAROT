@@ -40,7 +40,7 @@ const requestConfig = {
 }
 
 
-export async function getWeather(latitude: number, longitude: number): Promise<WeatherAPIResponse | undefined> {
+export async function getWeather(latitude: number, longitude: number): Promise<WeatherAPIResponse | null> {
     if (!APIKey) {
         throw new Error("API_KEY is missing");
     };
@@ -55,8 +55,10 @@ export async function getWeather(latitude: number, longitude: number): Promise<W
 
         const data: WeatherAPIResponse = await response.json();
         return data;
+        
     } catch (error) {
         console.error("Error getting the weather", error);
+        return null;
     }
 };
     

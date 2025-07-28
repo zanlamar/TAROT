@@ -10,6 +10,7 @@ export function addResponse(reading: FortuneType, vibe?: UserFeedback): void {
     vibe,
     timestamp: new Date().toISOString()
   });
+  console.log(responses);
 };
 
 export function addVibe(vibe: UserFeedback):void {

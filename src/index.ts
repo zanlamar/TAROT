@@ -6,6 +6,8 @@ import { getCard } from "./features/cardReading/LOGICgetCard.js"
 import { getCoordinates, getWeather } from "./features/weather/LOGICweather.js";
 import { printWeather } from "./features/weather/DOMdisplay.js";
 import { getCookie } from "./features/fortuneCookie/LOGICfortune.js";
+import { FortuneType } from "../src/features/cardReading/TYPES.js";
+
 
 
 
@@ -24,13 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
 });
 
-export function decideFortune() {
+export async function decideFortune(): Promise <FortuneType | null> {
     const random = Math.random() < 0.2;
 
     try {
-        (random)? getCookie() : getCard();
+       return (random)? getCookie() : getCard();
     } catch (error) {
         console.error(error);
+        return null;
     }
 
 }
